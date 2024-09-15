@@ -3,7 +3,6 @@ from discord.ext import tasks, commands
 import random
 from dotenv import load_dotenv
 import os
-from webserver import keep_alive
 
 # Load environment variables from a .env file
 load_dotenv()
@@ -96,9 +95,6 @@ async def set_daily_reminder(ctx, user: discord.User):
     global daily_reminder_user_id
     daily_reminder_user_id = user.id
     await ctx.send(f"Daily water reminder set for {user.mention}. I'll remind them to drink water once a day! 🐱💧")
-
-# keep bot alive
-keep_alive()
 
 # Run the bot with the token
 bot.run(TOKEN)
