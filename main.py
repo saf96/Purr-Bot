@@ -62,6 +62,7 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
     send_reminders.start()  # Start the reminder task
     daily_water_reminder.start()  # Start the daily water reminder task
+    await bot.tree.sync() # Syncs commands globally
 
 @bot.event
 async def on_message(message):
